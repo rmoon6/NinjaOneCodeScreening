@@ -35,7 +35,7 @@ private fun NavigationGraph(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = "home"
+        startDestination = CreateUserNavDestination.PERSONAL_DATA.routeName()
     ) {
         composable(CreateUserNavDestination.PERSONAL_DATA.routeName()) {
             PersonalDataScreen { navController.navigateToPersonalPreferencesScreen() }
