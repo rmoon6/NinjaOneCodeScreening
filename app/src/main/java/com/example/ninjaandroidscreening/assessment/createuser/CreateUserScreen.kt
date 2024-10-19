@@ -19,6 +19,7 @@ import com.example.ninjaandroidscreening.assessment.createuser.personalpreferenc
 fun CreateUserScreen(modifier: Modifier) {
     val navController = rememberNavController()
     Scaffold(
+        modifier = modifier,
         content = { padding ->
             Box(modifier = Modifier.padding(padding)) {
                 NavigationGraph(
