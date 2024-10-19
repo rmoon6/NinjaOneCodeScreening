@@ -23,13 +23,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 @Composable
 fun PersonalDataScreen(
     modifier: Modifier,
+    viewModel: PersonalDataViewModel,
     callbacks: PersonalDataScreenCallbacks
 ) {
-    val viewModel = PersonalDataViewModel.injectIntoComposable()
     val email by viewModel.enteredEmail.collectAsState()
     val password by viewModel.enteredPassword.collectAsState()
 
@@ -86,6 +88,7 @@ private fun PersonalDataScreenPreview() {
     NinjaAndroidScreeningTheme {
         PersonalDataScreen(
             modifier = Modifier.fillMaxSize().padding(16.dp),
+            viewModel = PersonalDataViewModelImpl(ValidatePersonalDataUseCase()),
             callbacks = NoOpCallbacks
         )
     }

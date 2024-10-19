@@ -16,7 +16,8 @@ interface PersonalDataViewModel {
     companion object {
         @Composable
         fun injectIntoComposable(): PersonalDataViewModel {
-            return hiltViewModel<PersonalDataViewModelImpl>()
+            val viewModel: PersonalDataViewModelImpl = hiltViewModel()
+            return viewModel
         }
     }
 }
