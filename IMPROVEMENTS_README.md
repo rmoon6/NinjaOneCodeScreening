@@ -2,3 +2,4 @@
 - Renamed "CreateUserScreen" to "ConfirmUserCreateScreen". This way, the top level composable can be called "CreateUserScreen"
 - The "Add New User" button was hovering at the very top of the screen, so I changed the dashboard composable to make it stick to the bottom. It was easier to click that way.
 - Again, not necessarily an improvement, but I upgraded the compose bom to the latest to fix this: https://stackoverflow.com/questions/76078226/use-jetpack-compose-modalbottomsheet-the-offset-was-read-before-being-initializ
+- Changed "InterestsBottomSheet" to be "SelectableListBottomSheet", since it's generic. I also got rid of the file for PetsBottomSheet.
