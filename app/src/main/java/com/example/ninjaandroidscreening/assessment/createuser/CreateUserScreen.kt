@@ -14,6 +14,7 @@ import com.example.ninjaandroidscreening.assessment.createuser.personaldata.Pers
 import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataScreenCallbacks
 import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataViewModel
 import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.PersonalPreferencesScreen
+import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.PersonalPreferencesViewModel
 
 @Composable
 fun CreateUserScreen(modifier: Modifier) {
@@ -55,7 +56,13 @@ private fun NavigationGraph(
         }
 
         composable(CreateUserNavDestination.PERSONAL_PREFERENCES.routeName()) {
-            PersonalPreferencesScreen { navController.navigateToConfirmCreateUserScreen() }
+            PersonalPreferencesScreen(
+                modifier = Modifier,
+                viewModel = PersonalPreferencesViewModel.injectIntoComposable(),
+                onPreferencesSubmitted = { pet, interest ->
+                    navController.navigateToConfirmCreateUserScreen()
+                },
+            )
         }
 
         composable(CreateUserNavDestination.CONFIRM_CREATE_USER.routeName()) {
