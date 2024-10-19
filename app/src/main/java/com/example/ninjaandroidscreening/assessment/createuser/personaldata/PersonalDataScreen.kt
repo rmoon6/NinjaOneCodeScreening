@@ -12,6 +12,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
 
 @Composable
 internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
@@ -66,5 +67,7 @@ internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 private fun PersonalDataScreenPreview() {
-    PersonalDataScreen(onNextScreenClicked = {})
+    NinjaAndroidScreeningTheme {
+        PersonalDataScreen(onNextScreenClicked = {})
+    }
 }

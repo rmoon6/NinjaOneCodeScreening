@@ -12,6 +12,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.ninjaandroidscreening.ui.SelectableListBottomSheet
+import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -111,5 +112,7 @@ private fun SelectableField(label: String, selectedOption: String?, onClick: () 
 @Preview(showBackground = true)
 @Composable
 private fun PersonalPreferencesScreenPreview() {
-    PersonalPreferencesScreen(onNextScreenClicked = {})
+    NinjaAndroidScreeningTheme {
+        PersonalPreferencesScreen(onNextScreenClicked = {})
+    }
 }

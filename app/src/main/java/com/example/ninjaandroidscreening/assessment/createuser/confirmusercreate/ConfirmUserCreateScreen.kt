@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
 
 @Composable
 internal fun ConfirmCreateUserScreen(
@@ -67,10 +68,12 @@ private fun UserDataField(label: String, value: String) {
 @Preview(showBackground = true)
 @Composable
 private fun ConfirmCreateUserScreenPreview() {
-    ConfirmCreateUserScreen(
-        email = "john.doe@example.com",
-        pet = "Dog",
-        interest = "Music",
-        onUserCreateConfirmed = {}
-    )
+    NinjaAndroidScreeningTheme {
+        ConfirmCreateUserScreen(
+            email = "john.doe@example.com",
+            pet = "Dog",
+            interest = "Music",
+            onUserCreateConfirmed = {}
+        )
+    }
 }
