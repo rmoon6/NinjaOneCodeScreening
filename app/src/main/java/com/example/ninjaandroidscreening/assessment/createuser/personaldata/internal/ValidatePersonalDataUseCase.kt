@@ -1,4 +1,4 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personaldata
+package com.example.ninjaandroidscreening.assessment.createuser.personaldata.internal
 
 class ValidatePersonalDataUseCase {
 
