@@ -1,4 +1,4 @@
-package com.example.ninjaandroidscreening.assessment.createuser.internal
+package com.example.ninjaandroidscreening.assessment.createuserscreen.internal
 
 internal enum class CreateUserNavDestination {
     PERSONAL_DATA,

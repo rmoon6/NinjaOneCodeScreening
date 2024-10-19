@@ -1,10 +1,10 @@
-package com.example.ninjaandroidscreening.assessment.createuser
+package com.example.ninjaandroidscreening.assessment.createuserscreen
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.internal.CreateUserViewModelImpl
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Interest
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Pet
+import com.example.ninjaandroidscreening.assessment.createuserscreen.internal.CreateUserViewModelImpl
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.Interest
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.Pet
 import kotlinx.coroutines.flow.StateFlow
 
 interface CreateUserViewModel {

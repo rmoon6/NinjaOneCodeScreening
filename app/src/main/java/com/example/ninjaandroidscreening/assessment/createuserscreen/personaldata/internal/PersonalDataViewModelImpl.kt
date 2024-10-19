@@ -1,7 +1,7 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personaldata.internal
+package com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.internal
 
 import androidx.lifecycle.ViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataViewModel
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.PersonalDataViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject

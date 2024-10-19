@@ -1,9 +1,9 @@
-package com.example.ninjaandroidscreening.assessment.createuser.internal
+package com.example.ninjaandroidscreening.assessment.createuserscreen.internal
 
 import androidx.lifecycle.ViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.CreateUserViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Interest
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Pet
+import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserViewModel
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.Interest
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.Pet
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class CreateUserViewModelImpl : ViewModel(), CreateUserViewModel {

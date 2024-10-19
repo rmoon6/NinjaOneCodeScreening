@@ -1,4 +1,4 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personaldata
+package com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,8 +23,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.internal.PersonalDataViewModelImpl
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.internal.ValidatePersonalDataUseCase
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.internal.PersonalDataViewModelImpl
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.internal.ValidatePersonalDataUseCase
 import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
 
 @Composable

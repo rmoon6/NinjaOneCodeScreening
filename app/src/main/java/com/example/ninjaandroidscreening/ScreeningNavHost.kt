@@ -6,8 +6,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.ninjaandroidscreening.assessment.createuser.CreateUserScreen
-import com.example.ninjaandroidscreening.assessment.createuser.CreateUserViewModel
+import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserScreen
+import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserViewModel
 import com.example.ninjaandroidscreening.ui.dashboard.DashboardScreen
 
 @Composable

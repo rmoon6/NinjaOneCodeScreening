@@ -1,8 +1,8 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personaldata
+package com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.internal.PersonalDataViewModelImpl
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.internal.PersonalDataViewModelImpl
 import kotlinx.coroutines.flow.StateFlow
 
 interface PersonalDataViewModel {

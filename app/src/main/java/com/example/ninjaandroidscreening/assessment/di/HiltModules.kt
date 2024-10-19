@@ -1,6 +1,6 @@
 package com.example.ninjaandroidscreening.assessment.di
 
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.internal.ValidatePersonalDataUseCase
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.internal.ValidatePersonalDataUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

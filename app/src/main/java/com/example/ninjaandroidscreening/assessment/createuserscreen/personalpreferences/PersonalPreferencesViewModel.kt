@@ -1,8 +1,8 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personalpreferences
+package com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.internal.PersonalPreferencesViewModelImpl
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.internal.PersonalPreferencesViewModelImpl
 import kotlinx.coroutines.flow.StateFlow
 
 interface PersonalPreferencesViewModel {

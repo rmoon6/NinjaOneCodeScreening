@@ -1,4 +1,4 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personalpreferences
+package com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences
 
 enum class Pet {
     DOG,

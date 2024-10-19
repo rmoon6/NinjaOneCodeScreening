@@ -1,4 +1,4 @@
-package com.example.ninjaandroidscreening.assessment.createuser
+package com.example.ninjaandroidscreening.assessment.createuserscreen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -10,13 +10,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.ninjaandroidscreening.assessment.createuser.confirmusercreate.ConfirmCreateUserScreen
-import com.example.ninjaandroidscreening.assessment.createuser.internal.CreateUserNavDestination
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataScreen
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataScreenCallbacks
-import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataViewModel
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.PersonalPreferencesScreen
-import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.PersonalPreferencesViewModel
+import com.example.ninjaandroidscreening.assessment.createuserscreen.confirmusercreate.ConfirmCreateUserScreen
+import com.example.ninjaandroidscreening.assessment.createuserscreen.internal.CreateUserNavDestination
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.PersonalDataScreen
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.PersonalDataScreenCallbacks
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.PersonalDataViewModel
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.PersonalPreferencesScreen
+import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.PersonalPreferencesViewModel
 
 @Composable
 fun CreateUserScreen(
