@@ -7,10 +7,12 @@ class ValidatePersonalDataUseCase {
     }
 
     private fun String.isEmailValid(): Boolean {
-        TODO("STOPSHIP")
+        return isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
     }
 
     private fun String.isPasswordValid(): Boolean {
-        TODO("STOPSHIP")
+        val containsLetter = any { it.isLetter() }
+        val containsDigit = any { it.isDigit() }
+        return length >= 6 && containsLetter && containsDigit
     }
 }
