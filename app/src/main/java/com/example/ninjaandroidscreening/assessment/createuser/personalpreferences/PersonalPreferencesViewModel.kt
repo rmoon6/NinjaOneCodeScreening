@@ -1,29 +1,23 @@
 package com.example.ninjaandroidscreening.assessment.createuser.personalpreferences
 
-import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.ninjaandroidscreening.assessment.createuser.personaldata.PersonalDataViewModel
+import kotlinx.coroutines.flow.StateFlow
 
-class PersonalPreferencesViewModel : ViewModel() {
+interface PersonalPreferencesViewModel {
 
-    val petList = listOf("Cat", "Dog", "None")
-    val interestList = listOf("Books", "Movies", "Sports", "None")
+    val selectedPet: StateFlow<Pet?>
+    val selectedInterest: StateFlow<Interest?>
+    val isSubmissionAllowed: StateFlow<Boolean>
 
-    private val _selectedPet = MutableStateFlow<String?>(null)
-    val selectedPet = _selectedPet.asStateFlow()
+    fun petSelected(pet: Pet)
+    fun interestSelected(interest: Interest)
 
-    fun updateSelectedPet(pet: String) {
-        _selectedPet.value = pet
+    companion object {
+        @Composable
+        fun injectIntoComposable(): PersonalPreferencesViewModel {
+            return hiltViewModel<PersonalPreferencesViewModelImpl>()
+        }
     }
-
-    private val _selectedInterest = MutableStateFlow<String?>(null)
-    val selectedInterest = _selectedInterest.asStateFlow()
-
-    fun updateInterest(interest: String) {
-        _selectedInterest.value = interest
-    }
-
-    private val _onNextButtonClicked = MutableStateFlow(false)
-    val onNextButtonClicked = _onNextButtonClicked.asStateFlow()
-
 }
