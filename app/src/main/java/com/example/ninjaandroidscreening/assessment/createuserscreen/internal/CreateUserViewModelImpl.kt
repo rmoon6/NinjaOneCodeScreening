@@ -7,10 +7,12 @@ import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpre
 import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpreferences.Pet
 import com.example.ninjaandroidscreening.assessment.userdb.UserDao
 import com.example.ninjaandroidscreening.assessment.userdb.UserEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class CreateUserViewModelImpl @Inject constructor(
     private val userDao: UserDao
 ) : ViewModel(), CreateUserViewModel {
