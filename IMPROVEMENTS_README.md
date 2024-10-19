@@ -1,3 +1,4 @@
 - Not necessarily an improvement, but I upgraded kotlin and kotlinCompilerExtensionVersion for compose to fix this: https://youtrack.jetbrains.com/issue/KT-63480/IllegalAccessError-superclass-access-check-failed-class-org.jetbrains.kotlin.kapt3.base.javac.KaptJavaCompiler
 - Renamed "CreateUserScreen" to "ConfirmUserCreateScreen". This way, the top level composable can be called "CreateUserScreen"
 - The "Add New User" button was hovering at the very top of the screen, so I changed the dashboard composable to make it stick to the bottom. It was easier to click that way.
+- Again, not necessarily an improvement, but I upgraded the compose bom to the latest to fix this: https://stackoverflow.com/questions/76078226/use-jetpack-compose-modalbottomsheet-the-offset-was-read-before-being-initializ
