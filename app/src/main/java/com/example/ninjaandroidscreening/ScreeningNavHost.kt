@@ -19,12 +19,13 @@ fun ScreeningNavHost(modifier: Modifier) {
         modifier = modifier,
     ) {
         composable(ScreeningNavDestination.DASHBOARD.routeName()) {
-            DashboardScreen(
-                modifier = Modifier.fillMaxSize(),
-                onAddNewUserButtonClick = {
-                    navController.navigate(ScreeningNavDestination.CREATE_USER.routeName())
-                },
-            )
+            // TODO STOPSHIP put this back!!
+//            DashboardScreen(
+//                modifier = Modifier.fillMaxSize(),
+//                onAddNewUserButtonClick = {
+//                    navController.navigate(ScreeningNavDestination.CREATE_USER.routeName())
+//                },
+//            )
         }
 
         composable(ScreeningNavDestination.CREATE_USER.routeName()) {
