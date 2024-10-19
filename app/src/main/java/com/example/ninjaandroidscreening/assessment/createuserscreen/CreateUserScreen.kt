@@ -1,7 +1,7 @@
 package com.example.ninjaandroidscreening.assessment.createuserscreen
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -21,25 +21,8 @@ import com.example.ninjaandroidscreening.assessment.createuserscreen.personalpre
 @Composable
 fun CreateUserScreen(
     modifier: Modifier,
-    viewModel: CreateUserViewModel
-) {
-    Scaffold(
-        modifier = modifier,
-        content = { padding ->
-            Box(modifier = Modifier.padding(padding)) {
-                NavigationGraph(
-                    modifier = Modifier.padding(padding),
-                    viewModel = viewModel
-                )
-            }
-        }
-    )
-}
-
-@Composable
-private fun NavigationGraph(
-    modifier: Modifier,
-    viewModel: CreateUserViewModel
+    viewModel: CreateUserViewModel,
+    onUserCreated: () -> Unit
 ) {
     val navController = rememberNavController()
     val enteredEmail by viewModel.enteredEmail.collectAsState()
@@ -80,7 +63,10 @@ private fun NavigationGraph(
                 email = requireNotNull(enteredEmail) { "Attempt to go to confirm user screen without an email!!" },
                 pet = requireNotNull(selectedPet) { "Attempt to go to confirm user screen without a pet selected!!" },
                 interest = requireNotNull(selectedInterest) { "Attempt to go to confirm user screen without an interest selected!!" },
-                onUserCreateConfirmed = { viewModel.onCreateUserConfirmed() }
+                onUserCreateConfirmed = {
+                    viewModel.onCreateUserConfirmed()
+                    onUserCreated.invoke()
+                }
             )
         }
     }
