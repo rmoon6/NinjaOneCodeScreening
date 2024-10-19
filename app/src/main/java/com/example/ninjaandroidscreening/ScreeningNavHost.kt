@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserScreen
 import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserViewModel
 import com.example.ninjaandroidscreening.ui.dashboard.DashboardScreen
+import com.example.ninjaandroidscreening.ui.dashboard.DashboardViewModel
 
 @Composable
 fun ScreeningNavHost(modifier: Modifier) {
@@ -19,13 +20,11 @@ fun ScreeningNavHost(modifier: Modifier) {
         modifier = modifier,
     ) {
         composable(ScreeningNavDestination.DASHBOARD.routeName()) {
-            // TODO STOPSHIP put this back!!
-//            DashboardScreen(
-//                modifier = Modifier.fillMaxSize(),
-//                onAddNewUserButtonClick = {
-//                    navController.navigate(ScreeningNavDestination.CREATE_USER.routeName())
-//                },
-//            )
+            DashboardScreen(
+                modifier = Modifier.fillMaxSize(),
+                viewModel = DashboardViewModel.injectIntoComposable(),
+                addUserSelected = { navController.navigate(ScreeningNavDestination.CREATE_USER.routeName()) }
+            )
         }
 
         composable(ScreeningNavDestination.CREATE_USER.routeName()) {
