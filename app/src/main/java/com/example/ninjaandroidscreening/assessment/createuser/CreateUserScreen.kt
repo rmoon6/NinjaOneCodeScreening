@@ -46,7 +46,12 @@ private fun NavigationGraph(
         }
 
         composable(CreateUserNavDestination.CONFIRM_CREATE_USER.routeName()) {
-            ConfirmCreateUserScreen { TODO("STOPSHIP") }
+            ConfirmCreateUserScreen(
+                email = "placeholder email",    // TODO STOPSHIP replaceme with the real deal!!
+                pet = "placeholder pet",    // TODO STOPSHIP replaceme with the real deal!!
+                interest = "placeholder interest",  // TODO STOPSHIP replaceme with the real deal!!
+                onUserCreateConfirmed = {}  // TODO STOPSHIP replaceme with the real deal!!
+            )
         }
     }
 }
