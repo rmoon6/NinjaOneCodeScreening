@@ -3,13 +3,13 @@ package com.example.ninjaandroidscreening.assessment.createuser
 import androidx.navigation.NavController
 
 fun NavController.navigateToPersonalDataScreen() {
-    TODO("STOPSHIP")
+    navigate(CreateUserNavDestination.PERSONAL_DATA.routeName())
 }
 
 fun NavController.navigateToPersonalPreferencesScreen() {
-    TODO("STOPSHIP")
+    navigate(CreateUserNavDestination.PERSONAL_PREFERENCES.routeName())
 }
 
 fun NavController.navigateToConfirmCreateUserScreen() {
-    TODO("STOPSHIP")
+    navigate(CreateUserNavDestination.CONFIRM_CREATE_USER.routeName())
 }
