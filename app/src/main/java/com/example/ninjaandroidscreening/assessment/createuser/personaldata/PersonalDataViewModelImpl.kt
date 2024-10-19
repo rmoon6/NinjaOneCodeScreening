@@ -17,7 +17,7 @@ class PersonalDataViewModelImpl @Inject constructor(
     override val isSubmissionAllowed: Boolean
         get() = TODO("Not yet implemented")
 
-    override fun usernameUpdated(username: String) {
+    override fun emailUpdated(email: String) {
         TODO("Not yet implemented")
     }
 

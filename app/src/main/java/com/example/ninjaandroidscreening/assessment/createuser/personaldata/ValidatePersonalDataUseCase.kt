@@ -2,11 +2,11 @@ package com.example.ninjaandroidscreening.assessment.createuser.personaldata
 
 class ValidatePersonalDataUseCase {
 
-    operator fun invoke(username: String, password: String): Boolean {
-        return username.isUsernameValid() && password.isPasswordValid()
+    operator fun invoke(email: String, password: String): Boolean {
+        return email.isEmailValid() && password.isPasswordValid()
     }
 
-    private fun String.isUsernameValid(): Boolean {
+    private fun String.isEmailValid(): Boolean {
         TODO("STOPSHIP")
     }
 

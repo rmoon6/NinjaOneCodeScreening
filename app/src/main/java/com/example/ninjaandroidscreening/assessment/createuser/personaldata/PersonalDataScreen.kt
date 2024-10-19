@@ -1,9 +1,19 @@
 package com.example.ninjaandroidscreening.assessment.createuser.personaldata
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -15,14 +25,16 @@ import androidx.compose.ui.unit.sp
 import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
 
 @Composable
-internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+fun PersonalDataScreen(
+    modifier: Modifier,
+    callbacks: PersonalDataScreenCallbacks
+) {
+    val viewModel = PersonalDataViewModel.injectIntoComposable()
+    val email by viewModel.enteredEmail.collectAsState()
+    val password by viewModel.enteredPassword.collectAsState()
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+        modifier = modifier,
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
     ) {
@@ -36,7 +48,7 @@ internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
 
         TextField(
             value = email,
-            onValueChange = { email = it },
+            onValueChange = { viewModel.emailUpdated(it) },
             label = { Text("Email") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             modifier = Modifier.fillMaxWidth()
@@ -46,7 +58,7 @@ internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
 
         TextField(
             value = password,
-            onValueChange = { password = it },
+            onValueChange = { viewModel.passwordUpdated(it) },
             label = { Text("Password") },
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -56,7 +68,7 @@ internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
-            onClick = onNextScreenClicked,
+            onClick = { callbacks.userSubmittedPersonalData(email, password) },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Next")
@@ -64,10 +76,21 @@ internal fun PersonalDataScreen(onNextScreenClicked: () -> Unit) {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+/////// PREVIEW STUFF
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 @Preview(showBackground = true)
 @Composable
 private fun PersonalDataScreenPreview() {
     NinjaAndroidScreeningTheme {
-        PersonalDataScreen(onNextScreenClicked = {})
+        PersonalDataScreen(
+            modifier = Modifier.fillMaxSize().padding(16.dp),
+            callbacks = NoOpCallbacks
+        )
     }
+}
+
+private object NoOpCallbacks : PersonalDataScreenCallbacks {
+    override fun userSubmittedPersonalData(email: String, password: String) {}
 }

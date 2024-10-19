@@ -10,7 +10,7 @@ interface PersonalDataViewModel {
     val enteredPassword: StateFlow<String>
     val isSubmissionAllowed: Boolean
 
-    fun usernameUpdated(username: String)
+    fun emailUpdated(email: String)
     fun passwordUpdated(password: String)
 
     companion object {
