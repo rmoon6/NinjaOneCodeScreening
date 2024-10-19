@@ -2,6 +2,7 @@ package com.example.ninjaandroidscreening.assessment.createuser.personaldata
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
@@ -10,18 +11,17 @@ class PersonalDataViewModelImpl @Inject constructor(
     private val dataValidation: ValidatePersonalDataUseCase
 ) : ViewModel(), PersonalDataViewModel {
 
-    override val enteredEmail: StateFlow<String>
-        get() = TODO("Not yet implemented")
-    override val enteredPassword: StateFlow<String>
-        get() = TODO("Not yet implemented")
-    override val isSubmissionAllowed: Boolean
-        get() = TODO("Not yet implemented")
+    override val enteredEmail = MutableStateFlow("")
+    override val enteredPassword = MutableStateFlow("")
+    override val isSubmissionAllowed = MutableStateFlow(false)
 
     override fun emailUpdated(email: String) {
-        TODO("Not yet implemented")
+        enteredEmail.value = email
+        isSubmissionAllowed.value = dataValidation.invoke(enteredEmail.value, enteredPassword.value)
     }
 
     override fun passwordUpdated(password: String) {
-        TODO("Not yet implemented")
+        enteredPassword.value = password
+        isSubmissionAllowed.value = dataValidation.invoke(enteredEmail.value, enteredPassword.value)
     }
 }

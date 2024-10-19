@@ -8,7 +8,7 @@ interface PersonalDataViewModel {
 
     val enteredEmail: StateFlow<String>
     val enteredPassword: StateFlow<String>
-    val isSubmissionAllowed: Boolean
+    val isSubmissionAllowed: StateFlow<Boolean>
 
     fun emailUpdated(email: String)
     fun passwordUpdated(password: String)
