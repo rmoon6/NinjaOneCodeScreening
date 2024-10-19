@@ -1,5 +1,22 @@
 package com.example.ninjaandroidscreening.assessment.createuser.personaldata
 
-import androidx.lifecycle.ViewModel
+import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
+import kotlinx.coroutines.flow.StateFlow
 
-class PersonalDataViewModel : ViewModel()
+interface PersonalDataViewModel {
+
+    val enteredEmail: StateFlow<String>
+    val enteredPassword: StateFlow<String>
+    val isSubmissionAllowed: Boolean
+
+    fun usernameUpdated(username: String)
+    fun passwordUpdated(password: String)
+
+    companion object {
+        @Composable
+        fun injectIntoComposable(): PersonalDataViewModel {
+            return hiltViewModel<PersonalDataViewModelImpl>()
+        }
+    }
+}
