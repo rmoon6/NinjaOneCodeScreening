@@ -4,3 +4,4 @@
 - Again, not necessarily an improvement, but I upgraded the compose bom to the latest to fix this: https://stackoverflow.com/questions/76078226/use-jetpack-compose-modalbottomsheet-the-offset-was-read-before-being-initializ
 - Changed "InterestsBottomSheet" to be "SelectableListBottomSheet", since it's generic. I also got rid of the file for PetsBottomSheet.
 - Pet and Interest are enums instead of strings
+- Not necessarily an improvement, but I generally opted to have the view models be interfaces and their implementations be classes that extend ViewModel() for ease of testing if I get around to it
