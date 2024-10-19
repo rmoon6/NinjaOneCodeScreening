@@ -17,13 +17,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Interest
+import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Pet
 import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
 
 @Composable
 internal fun ConfirmCreateUserScreen(
     email: String,
-    pet: String,
-    interest: String,
+    pet: Pet,
+    interest: Interest,
     onUserCreateConfirmed: () -> Unit
 ) {
     Column(
@@ -36,10 +38,10 @@ internal fun ConfirmCreateUserScreen(
         UserDataField(label = "Email", value = email)
         Spacer(modifier = Modifier.height(8.dp))
 
-        UserDataField(label = "Pet", value = pet)
+        UserDataField(label = "Pet", value = pet.displayName)
         Spacer(modifier = Modifier.height(8.dp))
 
-        UserDataField(label = "Interest", value = interest)
+        UserDataField(label = "Interest", value = interest.displayName)
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
@@ -71,8 +73,8 @@ private fun ConfirmCreateUserScreenPreview() {
     NinjaAndroidScreeningTheme {
         ConfirmCreateUserScreen(
             email = "john.doe@example.com",
-            pet = "Dog",
-            interest = "Music",
+            pet = Pet.CAT,
+            interest = Interest.GAMING,
             onUserCreateConfirmed = {}
         )
     }

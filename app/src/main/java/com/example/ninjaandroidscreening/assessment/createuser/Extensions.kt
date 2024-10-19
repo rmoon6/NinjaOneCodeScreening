@@ -1,6 +1,7 @@
 package com.example.ninjaandroidscreening.assessment.createuser
 
 import androidx.navigation.NavController
+import com.example.ninjaandroidscreening.assessment.createuser.internal.CreateUserNavDestination
 
 fun NavController.navigateToPersonalDataScreen() {
     navigate(CreateUserNavDestination.PERSONAL_DATA.routeName())
