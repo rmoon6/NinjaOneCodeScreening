@@ -32,6 +32,7 @@ fun PersonalDataScreen(
 ) {
     val email by viewModel.enteredEmail.collectAsState()
     val password by viewModel.enteredPassword.collectAsState()
+    val isSubmissionAllowed by viewModel.isSubmissionAllowed.collectAsState()
 
     Column(
         modifier = modifier,
@@ -68,8 +69,9 @@ fun PersonalDataScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
+            modifier = Modifier.fillMaxWidth(),
             onClick = { callbacks.userSubmittedPersonalData(email, password) },
-            modifier = Modifier.fillMaxWidth()
+            enabled = isSubmissionAllowed
         ) {
             Text("Next")
         }
