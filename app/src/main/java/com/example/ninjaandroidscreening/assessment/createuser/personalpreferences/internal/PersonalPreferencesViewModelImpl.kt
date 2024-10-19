@@ -1,6 +1,9 @@
-package com.example.ninjaandroidscreening.assessment.createuser.personalpreferences
+package com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.internal
 
 import androidx.lifecycle.ViewModel
+import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Interest
+import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.PersonalPreferencesViewModel
+import com.example.ninjaandroidscreening.assessment.createuser.personalpreferences.Pet
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class PersonalPreferencesViewModelImpl : ViewModel(), PersonalPreferencesViewModel {
