@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.ninjaandroidscreening.AppDatabase
 import com.example.ninjaandroidscreening.assessment.createuserscreen.personaldata.internal.ValidatePersonalDataUseCase
-import com.example.ninjaandroidscreening.assessment.userrepository.UserDao
+import com.example.ninjaandroidscreening.assessment.userdb.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

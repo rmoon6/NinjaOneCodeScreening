@@ -1,4 +1,4 @@
-package com.example.ninjaandroidscreening.assessment.userrepository
+package com.example.ninjaandroidscreening.assessment.userdb
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
