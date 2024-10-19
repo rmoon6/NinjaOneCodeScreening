@@ -15,9 +15,9 @@ import com.example.ninjaandroidscreening.ui.dashboard.DashboardViewModel
 fun ScreeningNavHost(modifier: Modifier) {
     val navController = rememberNavController()
     NavHost(
+        modifier = modifier,
         navController = navController,
         startDestination = ScreeningNavDestination.DASHBOARD.routeName(),
-        modifier = modifier,
     ) {
         composable(ScreeningNavDestination.DASHBOARD.routeName()) {
             DashboardScreen(
