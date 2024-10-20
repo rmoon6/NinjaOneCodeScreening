@@ -24,13 +24,9 @@ class ScreeningAppActivity : ComponentActivity() {
     @Composable
     private fun MainActivityContent() {
         NinjaAndroidScreeningTheme {
-            Scaffold { paddingValues ->
-                ScreeningNavHost(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(paddingValues)
-                )
-            }
+            ScreeningApp(
+                modifier = Modifier.fillMaxSize()
+            )
         }
     }
 }
