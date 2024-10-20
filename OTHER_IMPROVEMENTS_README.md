@@ -1,0 +1,12 @@
+- Add a better flow for validation
+  - Make it more clear to the user when their email and password is correct vs not
+  - Maybe add an error on the text field that says if the validation failed for each field
+- Consider adding animations to the page transitions
+- I would have been cool if the user could go to the next input field by pressing the next button on the keyboard
+- I might have re-visited the view model architecture of the create user screen a bit
+  - It works well and is clear as is, but the code is requiring some variables to not be null in some places, which seems a bit clunky
+  - I think this is partially because I opted to have a top-level VM along with the child VMs for every page
+  - This pattern is pretty clear, but I could consider doing away with that and just make every page responsible for navigating to the next and passing data along
+  - This could get rid of the nullability clunkiness, but might introduce other problems I don't foresee right now
+- Obviously the UI can always improve
+- Side note: I don't usually use room in my apps, but it is neat
