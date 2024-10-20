@@ -27,6 +27,9 @@ import com.example.ninjaandroidscreening.dashboardscreen.internal.DashboardViewM
 import com.example.ninjaandroidscreening.theme.NinjaAndroidScreeningTheme
 import com.example.ninjaandroidscreening.userdb.UserDao
 import com.example.ninjaandroidscreening.userdb.UserEntity
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.flow
 
 @Composable
 fun DashboardScreen(
@@ -95,10 +98,14 @@ private fun DashboardScreenPreview() {
 
 private object NoOpUserDao : UserDao {
     override suspend fun insertUser(user: UserEntity) {}
-    override suspend fun getAllUsers(): List<UserEntity> {
-        return listOf(
-            UserEntity(email = "john@example.com", pet = Pet.DOG, interest = Interest.MUSIC),
-            UserEntity(email = "jane@example.com", pet = Pet.CAT, interest = Interest.READING)
-        )
+    override fun getAllUsers(): Flow<List<UserEntity>> {
+        return flow {
+            emit(
+                listOf(
+                    UserEntity(email = "john@example.com", pet = Pet.DOG, interest = Interest.MUSIC),
+                    UserEntity(email = "jane@example.com", pet = Pet.CAT, interest = Interest.READING)
+                )
+            )
+        }
     }
 }
