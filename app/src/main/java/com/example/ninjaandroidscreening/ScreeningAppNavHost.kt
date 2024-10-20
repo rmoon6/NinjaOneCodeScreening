@@ -17,21 +17,21 @@ fun ScreeningNavHost(modifier: Modifier) {
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = ScreeningNavDestination.DASHBOARD.routeName(),
+        startDestination = ScreeningAppNavDestination.DASHBOARD.routeName(),
     ) {
-        composable(ScreeningNavDestination.DASHBOARD.routeName()) {
+        composable(ScreeningAppNavDestination.DASHBOARD.routeName()) {
             DashboardScreen(
                 modifier = Modifier.fillMaxSize(),
                 viewModel = DashboardViewModel.injectIntoComposable(),
-                addUserSelected = { navController.navigate(ScreeningNavDestination.CREATE_USER.routeName()) }
+                addUserSelected = { navController.navigate(ScreeningAppNavDestination.CREATE_USER.routeName()) }
             )
         }
 
-        composable(ScreeningNavDestination.CREATE_USER.routeName()) {
+        composable(ScreeningAppNavDestination.CREATE_USER.routeName()) {
             CreateUserScreen(
                 modifier = Modifier.fillMaxSize(),
                 viewModel = CreateUserViewModel.injectIntoComposable(),
-                onUserCreated = { navController.navigate(ScreeningNavDestination.DASHBOARD.routeName()) }
+                onUserCreated = { navController.navigate(ScreeningAppNavDestination.DASHBOARD.routeName()) }
             )
         }
     }

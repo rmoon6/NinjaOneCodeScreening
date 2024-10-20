@@ -9,6 +9,6 @@ import com.example.ninjaandroidscreening.userdb.UserTypeConverters
 
 @Database(entities = [UserEntity::class], version = 1)
 @TypeConverters(UserTypeConverters::class)
-abstract class AppDatabase : RoomDatabase() {
+abstract class ScreeningAppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 }

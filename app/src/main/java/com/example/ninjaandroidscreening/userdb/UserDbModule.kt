@@ -1,6 +1,6 @@
 package com.example.ninjaandroidscreening.userdb
 
-import com.example.ninjaandroidscreening.AppDatabase
+import com.example.ninjaandroidscreening.ScreeningAppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 object UserDbModule {
 
     @Provides
-    fun provideUserDao(database: AppDatabase): UserDao {
+    fun provideUserDao(database: ScreeningAppDatabase): UserDao {
         return database.userDao()
     }
 }

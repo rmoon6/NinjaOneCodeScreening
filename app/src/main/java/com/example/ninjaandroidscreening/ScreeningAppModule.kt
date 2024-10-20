@@ -11,14 +11,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object ScreeningAppModule {
 
     @Provides
     @Singleton
-    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
+    fun provideAppDatabase(@ApplicationContext context: Context): ScreeningAppDatabase {
         return Room.databaseBuilder(
             context = context,
-            klass = AppDatabase::class.java,
+            klass = ScreeningAppDatabase::class.java,
             name = "app_database"
         ).build()
     }

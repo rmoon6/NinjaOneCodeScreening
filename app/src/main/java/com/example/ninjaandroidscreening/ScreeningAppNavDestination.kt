@@ -1,6 +1,6 @@
 package com.example.ninjaandroidscreening
 
-enum class ScreeningNavDestination {
+enum class ScreeningAppNavDestination {
     DASHBOARD,
     CREATE_USER;
 
