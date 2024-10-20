@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.ninjaandroidscreening.ui.theme.NinjaAndroidScreeningTheme
+import com.example.ninjaandroidscreening.theme.NinjaAndroidScreeningTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -6,10 +6,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserScreen
-import com.example.ninjaandroidscreening.assessment.createuserscreen.CreateUserViewModel
-import com.example.ninjaandroidscreening.ui.dashboard.DashboardScreen
-import com.example.ninjaandroidscreening.ui.dashboard.DashboardViewModel
+import com.example.ninjaandroidscreening.createuserscreen.CreateUserScreen
+import com.example.ninjaandroidscreening.createuserscreen.CreateUserViewModel
+import com.example.ninjaandroidscreening.dashboardscreen.DashboardScreen
+import com.example.ninjaandroidscreening.dashboardscreen.DashboardViewModel
 
 @Composable
 fun ScreeningNavHost(modifier: Modifier) {
