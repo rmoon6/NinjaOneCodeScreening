@@ -31,7 +31,7 @@ fun ScreeningNavHost(modifier: Modifier) {
             CreateUserScreen(
                 modifier = Modifier.fillMaxSize(),
                 viewModel = CreateUserViewModel.injectIntoComposable(),
-                onUserCreated = { navController.navigate(ScreeningAppNavDestination.DASHBOARD.routeName()) }
+                onUserCreated = { navController.navigateUp() }
             )
         }
     }
