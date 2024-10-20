@@ -19,7 +19,7 @@ object ScreeningAppModule {
         return Room.databaseBuilder(
             context = context,
             klass = ScreeningAppDatabase::class.java,
-            name = "app_database"
+            name = "screening_app_database"
         ).build()
     }
 }
