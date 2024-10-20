@@ -1,10 +1,7 @@
-package com.example.ninjaandroidscreening.di
+package com.example.ninjaandroidscreening
 
 import android.content.Context
 import androidx.room.Room
-import com.example.ninjaandroidscreening.AppDatabase
-import com.example.ninjaandroidscreening.createuserscreen.personaldata.internal.ValidatePersonalDataUseCase
-import com.example.ninjaandroidscreening.userdb.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,13 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoryModule {
-
-    @Provides
-    @Singleton
-    fun provideValidatePersonalDataUseCase(): ValidatePersonalDataUseCase {
-        return ValidatePersonalDataUseCase()
-    }
+object AppModule {
 
     @Provides
     @Singleton
@@ -30,10 +21,5 @@ object RepositoryModule {
             klass = AppDatabase::class.java,
             name = "app_database"
         ).build()
-    }
-
-    @Provides
-    fun provideUserDao(database: AppDatabase): UserDao {
-        return database.userDao()
     }
 }
