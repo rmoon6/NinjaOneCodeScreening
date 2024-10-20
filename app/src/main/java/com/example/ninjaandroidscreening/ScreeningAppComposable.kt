@@ -50,11 +50,11 @@ fun ScreeningApp(modifier: Modifier) {
                 CreateUserScreen(
                     modifier = Modifier.fillMaxSize(),
                     viewModel = CreateUserViewModel.injectIntoComposable(),
-                    onUserCreated = {
+                    onUserCreated = { email ->
                         navController.navigateUp()
                         coroutineScope.launch {
                             snackbarHostState.showSnackbar(
-                                message = "User created successfully!",
+                                message = "$email user created successfully",
                                 duration = SnackbarDuration.Short
                             )
                         }

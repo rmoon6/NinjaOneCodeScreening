@@ -22,7 +22,7 @@ import com.example.ninjaandroidscreening.createuserscreen.personalpreferences.Pe
 fun CreateUserScreen(
     modifier: Modifier,
     viewModel: CreateUserViewModel,
-    onUserCreated: () -> Unit
+    onUserCreated: (email: String) -> Unit
 ) {
     val navController = rememberNavController()
     val enteredEmail by viewModel.enteredEmail.collectAsState()
@@ -59,13 +59,14 @@ fun CreateUserScreen(
         }
 
         composable(CreateUserNavDestination.CONFIRM_CREATE_USER.routeName()) {
+            val email = requireNotNull(enteredEmail) { "Attempt to go to confirm user screen without an email!!" }
             ConfirmCreateUserScreen(
-                email = requireNotNull(enteredEmail) { "Attempt to go to confirm user screen without an email!!" },
+                email = email,
                 pet = requireNotNull(selectedPet) { "Attempt to go to confirm user screen without a pet selected!!" },
                 interest = requireNotNull(selectedInterest) { "Attempt to go to confirm user screen without an interest selected!!" },
                 onUserCreateConfirmed = {
                     viewModel.onCreateUserConfirmed()
-                    onUserCreated.invoke()
+                    onUserCreated.invoke(email)
                 }
             )
         }
