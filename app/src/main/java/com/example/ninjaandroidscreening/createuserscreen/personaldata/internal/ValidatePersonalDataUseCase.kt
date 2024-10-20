@@ -7,12 +7,16 @@ class ValidatePersonalDataUseCase {
     }
 
     private fun String.isEmailValid(): Boolean {
-        return isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+        return isNotEmpty() && matches(EMAIL_REGEX_STRING.toRegex())
     }
 
     private fun String.isPasswordValid(): Boolean {
         val containsLetter = any { it.isLetter() }
         val containsDigit = any { it.isDigit() }
         return length >= 6 && containsLetter && containsDigit
+    }
+
+    companion object {
+        private const val EMAIL_REGEX_STRING = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
     }
 }
